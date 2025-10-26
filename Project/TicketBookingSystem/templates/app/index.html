@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow - Home</title>
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="{% url 'index' %}" class="logo">
+                    <span class="logo-icon">🎬</span>
+                    <span class="logo-text">BookMyShow</span>
+                </a>
+                <div class="nav-links">
+                    <a href="{% url 'index' %}" class="nav-link">Movies</a>
+                    <a href="#" class="nav-link">Events</a>
+                    <a href="#" class="nav-link">Concerts</a>
+                </div>
+            </div>
+            <div class="nav-search">
+                <input type="search" placeholder="Search for movies, events, venues..." class="search-input">
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="nav-right">
+                <button class="btn-icon" id="theme-toggle">🌙</button>
+                <button class="btn-icon">👤</button>
+                <button class="btn btn-primary">Sign In</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner" id="hero-banner">
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <span class="hero-badge">Action</span>
+            <h1 class="hero-title">Mission Impossible: Dead Reckoning</h1>
+            <p class="hero-subtitle">Action-packed thriller of the year</p>
+            <button class="btn btn-primary btn-lg">Book Now</button>
+        </div>
+        <button class="hero-nav hero-nav-prev" id="hero-prev">‹</button>
+        <button class="hero-nav hero-nav-next" id="hero-next">›</button>
+        <div class="hero-indicators" id="hero-indicators"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="section-header">
+            <h2>Now Showing</h2>
+            <button class="btn-ghost mobile-filter-toggle" id="filter-toggle">Show Filters</button>
+        </div>
+
+        <div class="content-grid">
+            <!-- Filters Sidebar -->
+            <aside class="filters-sidebar" id="filters-sidebar">
+                <div class="filter-card">
+                    <div class="filter-header">
+                        <span class="filter-icon">🎚️</span>
+                        <h3>Filters</h3>
+                    </div>
+                    <div class="filter-group">
+                        <label>🎬 Genre</label>
+                        <select class="filter-select">
+                            <option value="">Select genre</option>
+                            <option value="action">Action</option>
+                            <option value="comedy">Comedy</option>
+                            <option value="drama">Drama</option>
+                            <option value="horror">Horror</option>
+                            <option value="romance">Romance</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>📅 Date</label>
+                        <input type="date" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label>📍 Venue</label>
+                        <select class="filter-select">
+                            <option value="">Select venue</option>
+                            <option value="pvr">PVR Cinemas</option>
+                            <option value="inox">INOX</option>
+                            <option value="cinepolis">Cinepolis</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>💰 Price Range</label>
+                        <select class="filter-select">
+                            <option value="">Select price range</option>
+                            <option value="0-200">₹0 - ₹200</option>
+                            <option value="200-500">₹200 - ₹500</option>
+                            <option value="500-1000">₹500 - ₹1000</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn btn-outline">Reset</button>
+                        <button class="btn btn-primary">Apply</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Shows Grid -->
+            <div class="shows-grid" id="shows-grid">
+                <!-- Show cards will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../../static/app/js/app.js"></script>
+</body>
+</html>
