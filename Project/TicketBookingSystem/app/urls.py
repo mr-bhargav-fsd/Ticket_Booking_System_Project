@@ -7,4 +7,6 @@ urlpatterns = [
     path('booking-success/', views.booking_success, name='booking_success'),
     path('login/', views.login, name='login'),
     path('register/', views.register, name='register'),
+    # path('ticket/<str:ticket_id>/', views.view_ticket, name='view_ticket'),
 ]
+

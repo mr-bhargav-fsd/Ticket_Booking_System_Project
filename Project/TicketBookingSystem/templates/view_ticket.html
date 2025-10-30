@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            text-align: center;
+            padding: 40px;
+        }
+        .ticket-card {
+            display: inline-block;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 20px 40px;
+        }
+        .ticket-card img {
+            margin-top: 15px;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-card">
+        <h2>{{ ticket.event.title }}</h2>
+        <p><strong>Ticket ID:</strong> {{ ticket.ticket_id }}</p>
+        <p><strong>User:</strong> {{ ticket.user.name }}</p>
+        <p><strong>Price:</strong> ₹{{ ticket.price }}</p>
+        <p><strong>Booking Time:</strong> {{ ticket.booking_time }}</p>
+
+        {% if ticket.qr_code %}
+            <img src="{{ ticket.qr_code.url }}" alt="QR Code">
+        {% else %}
+            <p>No QR Code available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
